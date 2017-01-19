@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, RecordViewControllerDelegate, SettingsViewControllerDelegate {
+class RecordsViewController: UIViewController {
 
     let defaultFileNameForLocalStore = "awesomeFileName.dat"
     let reusableCellID = "ReusableCellID"
@@ -16,7 +16,7 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     // lazy initialization of RecordsManager instance
-    lazy var recordsManager: RecordsManager = {
+    fileprivate lazy var recordsManager: RecordsManager = {
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
         let fileURLForLocalStore = documentDirectoryURL!.appendingPathComponent(self.defaultFileNameForLocalStore)
         return RecordsManager(url: fileURLForLocalStore, preferences: Preferences.standard)
@@ -41,8 +41,9 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
         present(navigationController, animated: true, completion: nil)
     }
     
-    
-    // MARK: UITableViewDataSource implementation
+}
+
+extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordsManager.records.count
     }
@@ -56,24 +57,6 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         return tableViewCell
     }
-
-    
-    // MARK: UITableViewDelegate implementation
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rootViewController = RecordViewController(passwordStrength: Preferences.standard.passwordStrength)
-        rootViewController.delegate = self
-        rootViewController.record = recordsManager.records[indexPath.row] 
-
-        let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.isTranslucent = false
-        present(navigationController, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -82,8 +65,27 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    // MARK: NewRecordViewControllerDelegate implementation
+}
+
+extension RecordsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rootViewController = RecordViewController(passwordStrength: Preferences.standard.passwordStrength)
+        rootViewController.delegate = self
+        rootViewController.record = recordsManager.records[indexPath.row]
+        
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.isTranslucent = false
+        present(navigationController, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+}
+
+extension RecordsViewController: RecordViewControllerDelegate {
     func recordViewController(_ recordViewController: RecordViewController, didFinishWith record: NSDictionary?) {
         if let newRecord = record {
             if let oldRecord = recordViewController.record {
@@ -95,13 +97,13 @@ class RecordsViewController: UIViewController, UITableViewDataSource, UITableVie
             
             tableView.reloadData()
         }
-        dismiss(animated: true, completion: nil)        
+        dismiss(animated: true, completion: nil)
     }
+}
 
-    // MARK: SettingsViewControllerDelegate
+extension RecordsViewController: SettingsViewControllerDelegate {
     func settingsViewControllerDidFinish(sender: SettingsViewController) {
         recordsManager.synchronyze()
         dismiss(animated: true, completion: nil)
     }
-    
 }
