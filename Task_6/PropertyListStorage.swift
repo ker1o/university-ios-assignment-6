@@ -14,7 +14,12 @@ class PropertyListStorage: RecordsSynchronizing {
     
     init(url: URL) {
         self.url = url
-        self.nsArray = NSArray(contentsOf: url)
+        nsArray = NSArray(contentsOf: url)
+        
+        if nsArray == nil {
+            nsArray = NSArray()
+        }
+        
     }
     
     var records: [NSDictionary] {
