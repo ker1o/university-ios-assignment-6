@@ -56,8 +56,8 @@ extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: reusableCellID, for: indexPath)
         let record = recordsManager.records[indexPath.row]
-        tableViewCell.textLabel?.text = record.value(forKey: Record.keyServiceName) as? String
-        tableViewCell.detailTextLabel?.text = record.value(forKey: Record.keyPassword) as? String
+        tableViewCell.textLabel?.text = record[Record.keyServiceName] as? String
+        tableViewCell.detailTextLabel?.text = record[Record.keyPassword] as? String
         
         return tableViewCell
     }

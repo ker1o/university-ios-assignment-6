@@ -10,6 +10,5 @@ import Foundation
 protocol RecordsSynchronizing {
     var records: [NSDictionary] { get }
     func synchronize(records: [NSDictionary]) -> Bool
-    
 }
 
