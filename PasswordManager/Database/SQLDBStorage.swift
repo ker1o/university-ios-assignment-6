@@ -11,7 +11,6 @@ import SQLite
 class SQLDBStorage: RecordsSynchronizing {
     
     private var urlPath: String
-    
     private var db: Connection
     
     private let recordsTable = Table("records")
@@ -82,6 +81,5 @@ class SQLDBStorage: RecordsSynchronizing {
             return false
         }
     }
-    
     
 }

@@ -23,8 +23,6 @@ class PropertyListStorage: RecordsSynchronizing {
         }
     }
     
-
-    
     func synchronize(records: [Record]) -> Bool {
         return NSKeyedArchiver.archiveRootObject(records, toFile: url.path)
     }
