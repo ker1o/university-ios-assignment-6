@@ -10,25 +10,22 @@ import Foundation
 
 class PropertyListStorage: RecordsSynchronizing {
     private var url: URL
-    private var nsArray: NSArray?
+    
+    private (set) var records: [Record]
     
     init(url: URL) {
         self.url = url
-        nsArray = NSArray(contentsOf: url)
         
-        if nsArray == nil {
-            nsArray = NSArray()
-        }
-        
-    }
-    
-    var records: [NSDictionary] {
-        get {
-            return nsArray as! [NSDictionary]
+        if let records = NSKeyedUnarchiver.unarchiveObject(withFile: url.path) as? [Record] {
+            self.records = records
+        } else {
+            self.records = [Record]()
         }
     }
     
-    func synchronize(records: [NSDictionary]) -> Bool {
-        return NSArray(array: records).write(to: url, atomically: true)
+
+    
+    func synchronize(records: [Record]) -> Bool {
+        return NSKeyedArchiver.archiveRootObject(records, toFile: url.path)
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RecordViewControllerDelegate {
-    func recordViewController(_ recordViewController: RecordViewController, didFinishWith record: NSDictionary?)
+    func recordViewController(_ recordViewController: RecordViewController, didFinishWith record: Record?)
 }

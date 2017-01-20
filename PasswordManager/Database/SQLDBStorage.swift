@@ -40,20 +40,20 @@ class SQLDBStorage: RecordsSynchronizing {
     }
     
     // MARK: RecordsSynchronizing implementation
-    var records: [NSDictionary] {
+    var records: [Record] {
         get {
-            var recordsResult = [NSDictionary]()
+            var recordsResult = [Record]()
         
             let sequence = try! db.prepare(recordsTable)
             for record in sequence {
-                let record: NSDictionary = [Record.keyServiceName: record[serviceNameColumn], Record.keyPassword: record[passwordColumn]]
+                let record: Record = Record(serviceName: record[serviceNameColumn], password: record[passwordColumn])
                 recordsResult.append(record)
             }
             return recordsResult
         }
     }
     
-    func synchronize(records: [NSDictionary]) -> Bool {
+    func synchronize(records: [Record]) -> Bool {
         if deleteAllRecords() {
             return addRecords(records: records)
         } else {
@@ -62,11 +62,11 @@ class SQLDBStorage: RecordsSynchronizing {
     }
     
     // MARK: utils methods for work with database
-    fileprivate func addRecords(records: [NSDictionary]) -> Bool {
+    fileprivate func addRecords(records: [Record]) -> Bool {
         do {
             for record in records {
-                try db.run(recordsTable.insert(serviceNameColumn <- record.object(forKey: Record.keyServiceName) as! String,
-                                               passwordColumn <- record.object(forKey: Record.keyPassword) as! String))
+                try db.run(recordsTable.insert(serviceNameColumn <- record.serviceName,
+                                               passwordColumn <- record.password))
             }
             return true
         } catch {

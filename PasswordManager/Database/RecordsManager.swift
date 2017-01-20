@@ -9,7 +9,7 @@
 import Foundation
 
 class RecordsManager {
-    private var _records: [NSDictionary]!
+    private var _records: [Record]!
     
     private var preferences: Preferences
     
@@ -34,23 +34,23 @@ class RecordsManager {
         _records = currentStorage.records
     }
 
-    public var records: [NSDictionary] {
+    public var records: [Record] {
         return _records
     }
     
     //MARK: management of records
-    func register(record: NSDictionary) -> Void {
-        if (record.count > 0) {
-            _records.append(record)
-        }
+    func register(record: Record) -> Void {
+        _records.append(record)
     }
     
-    func remove(record: NSDictionary) -> Void {
-        _records.remove(at: _records.index(of: record)!)
+    func remove(record: Record) -> Void {
+        let index = _records.index(where: {$0 === record})!
+        _records.remove(at: index)
     }
     
-    func replace(record: NSDictionary, withRecord: NSDictionary) -> Void {
-        _records[_records.index(of: record)!] = withRecord
+    func replace(record: Record, withRecord: Record) -> Void {
+        let index = _records.index(where: {$0 === record})!
+        _records[index] = withRecord
     }
     
     @discardableResult

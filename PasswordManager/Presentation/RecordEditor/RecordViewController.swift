@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordViewController: UIViewController, UITextFieldDelegate {
+class RecordViewController: UIViewController {
     
     let passwordLengthShort = 5
     let passwordLengthMedium = 10
@@ -23,7 +23,7 @@ class RecordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var serviceNameTextField: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
     
-    var record: NSDictionary?
+    var record: Record?
    
     var passwordStrength: Preferences.PasswordStrength
     var delegate: RecordViewControllerDelegate?
@@ -60,7 +60,7 @@ class RecordViewController: UIViewController, UITextFieldDelegate {
     
     func saveRecord() {
         if serviceNameTextField.text != "" {
-            let record: NSDictionary = [Record.keyServiceName: serviceNameTextField.text!, Record.keyPassword: passwordLabel.text!]
+            let record: Record = Record(serviceName: serviceNameTextField.text!, password: passwordLabel.text!)
             delegate!.recordViewController(self, didFinishWith: record)
         }
     }
@@ -81,8 +81,8 @@ class RecordViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
         
         if let record = record {
-            serviceNameTextField.text = record.object(forKey: Record.keyServiceName) as? String
-            passwordLabel.text = record.object(forKey: Record.keyPassword) as? String
+            serviceNameTextField.text = record.serviceName
+            passwordLabel.text = record.password
         }
      }
     
@@ -109,13 +109,13 @@ class RecordViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didTouchRefreshButton(_ sender: AnyObject) {
         refreshPassword()
     }
-    
-    // MARK: UITextField delegate implementation
+
+}
+
+extension RecordViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //saveRecord()
         textField.resignFirstResponder()
         return true
     }
-
-
 }

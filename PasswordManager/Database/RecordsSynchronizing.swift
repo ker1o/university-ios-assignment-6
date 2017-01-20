@@ -8,7 +8,8 @@
 import Foundation
 
 protocol RecordsSynchronizing {
-    var records: [NSDictionary] { get }
-    func synchronize(records: [NSDictionary]) -> Bool
+    var records: [Record] { get }
+    
+    func synchronize(records: [Record]) -> Bool
 }
 

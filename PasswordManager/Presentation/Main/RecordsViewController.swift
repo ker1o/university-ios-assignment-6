@@ -56,8 +56,8 @@ extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: reusableCellID, for: indexPath)
         let record = recordsManager.records[indexPath.row]
-        tableViewCell.textLabel?.text = record[Record.keyServiceName] as? String
-        tableViewCell.detailTextLabel?.text = record[Record.keyPassword] as? String
+        tableViewCell.textLabel?.text = record.serviceName
+        tableViewCell.detailTextLabel?.text = record.password
         
         return tableViewCell
     }
@@ -90,7 +90,7 @@ extension RecordsViewController: UITableViewDelegate {
 }
 
 extension RecordsViewController: RecordViewControllerDelegate {
-    func recordViewController(_ recordViewController: RecordViewController, didFinishWith record: NSDictionary?) {
+    func recordViewController(_ recordViewController: RecordViewController, didFinishWith record: Record?) {
         if let newRecord = record {
             if let oldRecord = recordViewController.record {
                 recordsManager.replace(record: oldRecord, withRecord: newRecord)

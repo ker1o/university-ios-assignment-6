@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController {
 
     let keyPasswordStrengthSectionTitle = "Password strength"
     let keyPasswordStorageSectionTitle = "Password storage"
@@ -88,7 +88,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         delegate?.settingsViewControllerDidFinish(sender: self)
     }
     
-    // MARK: UITableViewDataSource
+}
+
+extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? dataPasswordStrength.count : dataPasswordStorage.count
     }
@@ -122,9 +124,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return tableViewCell
     }
-    
-    
-    // MARK: UITableViewDelegate
+}
+
+extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var oldIndexPath: IndexPath?
         if indexPath.section == 0 {
@@ -146,5 +148,4 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.reloadRows(at: [oldIndexPath!, indexPath], with: UITableViewRowAnimation.none)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
