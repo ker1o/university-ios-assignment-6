@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213AE70E1E31DECB007876F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21C1DFDA1DDF10940077827C /* Info.plist */; };
 		214D1DD21E07EB1F00F23FDD /* SQLDBStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD11E07EB1F00F23FDD /* SQLDBStorage.swift */; };
 		214D1DD61E0A94B400F23FDD /* RecordsSynchronizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */; };
 		214D1DD81E0A9D0000F23FDD /* PropertyListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD71E0A9D0000F23FDD /* PropertyListStorage.swift */; };
@@ -47,7 +48,7 @@
 		21C1E01D1DE5AE550077827C /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		21C1E01E1DE5AE550077827C /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		21C1E0211DE5BFB60077827C /* RecordViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewControllerDelegate.swift; sourceTree = "<group>"; };
-		21C1E0231DE80C2C0077827C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Settings.bundle; sourceTree = "<group>"; };
+		21C1E0231DE80C2C0077827C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		21C1E0251DE82AD70077827C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		21C1E0261DE82AD70077827C /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		21C1E0291DEB09550077827C /* SettingsViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 				21C1E0141DE4731A0077827C /* PasswordGenerator.swift */,
 				21C1E0171DE476AD0077827C /* StringShuffledExtension.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -85,7 +85,6 @@
 				213AE70A1E31DC59007876F6 /* RecordEditor */,
 				213AE7091E31DC52007876F6 /* Settings */,
 			);
-			name = Presentation;
 			path = Presentation;
 			sourceTree = "<group>";
 		};
@@ -95,7 +94,6 @@
 				21C1DFE01DDF278D0077827C /* RecordsViewController.swift */,
 				21C1DFE11DDF278D0077827C /* RecordsViewController.xib */,
 			);
-			name = Main;
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -106,7 +104,6 @@
 				21C1E0261DE82AD70077827C /* SettingsViewController.xib */,
 				21C1E0291DEB09550077827C /* SettingsViewControllerDelegate.swift */,
 			);
-			name = Settings;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -117,7 +114,6 @@
 				21C1E01E1DE5AE550077827C /* RecordViewController.xib */,
 				21C1E0211DE5BFB60077827C /* RecordViewControllerDelegate.swift */,
 			);
-			name = RecordEditor;
 			path = RecordEditor;
 			sourceTree = "<group>";
 		};
@@ -126,7 +122,6 @@
 			children = (
 				21C1E0231DE80C2C0077827C /* Settings.bundle */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -139,7 +134,6 @@
 				214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */,
 				214D1DD11E07EB1F00F23FDD /* SQLDBStorage.swift */,
 			);
-			name = Database;
 			path = Database;
 			sourceTree = "<group>";
 		};
@@ -148,7 +142,6 @@
 			children = (
 				21C1E0121DE331FD0077827C /* Preferences.swift */,
 			);
-			name = Data;
 			path = Data;
 			sourceTree = "<group>";
 		};
@@ -182,7 +175,6 @@
 				21C1DFD51DDF10940077827C /* Assets.xcassets */,
 				21C1DFDA1DDF10940077827C /* Info.plist */,
 			);
-			name = PasswordManager;
 			path = PasswordManager;
 			sourceTree = "<group>";
 		};
@@ -268,6 +260,7 @@
 			files = (
 				21C1E0241DE80C2C0077827C /* Settings.bundle in Resources */,
 				21C1DFD61DDF10940077827C /* Assets.xcassets in Resources */,
+				213AE70E1E31DECB007876F6 /* Info.plist in Resources */,
 				21C1DFE31DDF278D0077827C /* RecordsViewController.xib in Resources */,
 				21C1E0201DE5AE550077827C /* RecordViewController.xib in Resources */,
 				21C1E0281DE82AD70077827C /* SettingsViewController.xib in Resources */,
