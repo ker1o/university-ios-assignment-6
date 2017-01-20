@@ -39,14 +39,14 @@
 		214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsSynchronizing.swift; sourceTree = "<group>"; };
 		214D1DD71E0A9D0000F23FDD /* PropertyListStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListStorage.swift; sourceTree = "<group>"; };
 		21C1DFCB1DDF10940077827C /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		21C1DFCE1DDF10940077827C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21C1DFD51DDF10940077827C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
-		21C1DFDA1DDF10940077827C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
+		21C1DFCE1DDF10940077827C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21C1DFD51DDF10940077827C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21C1DFDA1DDF10940077827C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C1DFE01DDF278D0077827C /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		21C1DFE11DDF278D0077827C /* RecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordsViewController.xib; sourceTree = "<group>"; };
-		21C1E00E1DE327460077827C /* RecordsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsManager.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
-		21C1E0101DE3315A0077827C /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Record.swift; sourceTree = "<group>"; };
-		21C1E0121DE331FD0077827C /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		21C1E00E1DE327460077827C /* RecordsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
+		21C1E0101DE3315A0077827C /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		21C1E0121DE331FD0077827C /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		21C1E0141DE4731A0077827C /* PasswordGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		21C1E0171DE476AD0077827C /* StringShuffledExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringShuffledExtension.swift; sourceTree = "<group>"; };
 		21C1E01D1DE5AE550077827C /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +140,6 @@
 				214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */,
 				214D1DD11E07EB1F00F23FDD /* SQLDBStorage.swift */,
 			);
-			name = Storages;
 			path = Storages;
 			sourceTree = "<group>";
 		};
@@ -159,8 +158,8 @@
 				213AE70D1E31DCC5007876F6 /* Data */,
 				213AE7071E31DC46007876F6 /* Presentation */,
 				213AE70C1E31DC99007876F6 /* Storages */,
+				21C1DFCE1DDF10940077827C /* AppDelegate.swift */,
 			);
-			name = Internal;
 			path = Internal;
 			sourceTree = "<group>";
 		};
@@ -170,7 +169,6 @@
 				21C1E0121DE331FD0077827C /* Preferences.swift */,
 				21C1E00E1DE327460077827C /* RecordsManager.swift */,
 			);
-			name = Controllers;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -198,7 +196,6 @@
 				213AE7061E31DC3F007876F6 /* Common */,
 				213AE7191E3238C9007876F6 /* Internal */,
 				213AE70B1E31DC63007876F6 /* Resources */,
-				21C1DFCE1DDF10940077827C /* AppDelegate.swift */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
