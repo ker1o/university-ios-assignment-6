@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		213AE70E1E31DECB007876F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21C1DFDA1DDF10940077827C /* Info.plist */; };
 		213AE7101E3219D4007876F6 /* TwoColumnsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213AE70F1E3219D4007876F6 /* TwoColumnsTableViewCell.swift */; };
+		213AE7161E3231F2007876F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213AE7181E3231F2007876F6 /* Localizable.strings */; };
 		214D1DD21E07EB1F00F23FDD /* SQLDBStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD11E07EB1F00F23FDD /* SQLDBStorage.swift */; };
 		214D1DD61E0A94B400F23FDD /* RecordsSynchronizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */; };
 		214D1DD81E0A9D0000F23FDD /* PropertyListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D1DD71E0A9D0000F23FDD /* PropertyListStorage.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		213AE70F1E3219D4007876F6 /* TwoColumnsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnsTableViewCell.swift; sourceTree = "<group>"; };
+		213AE7171E3231F2007876F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		214D1DD11E07EB1F00F23FDD /* SQLDBStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLDBStorage.swift; sourceTree = "<group>"; };
 		214D1DD51E0A94B400F23FDD /* RecordsSynchronizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsSynchronizing.swift; sourceTree = "<group>"; };
 		214D1DD71E0A9D0000F23FDD /* PropertyListStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListStorage.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				21C1E0231DE80C2C0077827C /* Settings.bundle */,
+				213AE7181E3231F2007876F6 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -244,7 +247,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 21C1DFC21DDF10940077827C;
 			productRefGroup = 21C1DFCC1DDF10940077827C /* Products */;
@@ -264,6 +266,7 @@
 				21C1E0241DE80C2C0077827C /* Settings.bundle in Resources */,
 				21C1DFD61DDF10940077827C /* Assets.xcassets in Resources */,
 				213AE70E1E31DECB007876F6 /* Info.plist in Resources */,
+				213AE7161E3231F2007876F6 /* Localizable.strings in Resources */,
 				21C1DFE31DDF278D0077827C /* RecordsViewController.xib in Resources */,
 				21C1E0201DE5AE550077827C /* RecordViewController.xib in Resources */,
 				21C1E0281DE82AD70077827C /* SettingsViewController.xib in Resources */,
@@ -344,6 +347,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		213AE7181E3231F2007876F6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				213AE7171E3231F2007876F6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		21C1DFDB1DDF10940077827C /* Debug */ = {

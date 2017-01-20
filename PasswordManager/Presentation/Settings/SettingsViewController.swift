@@ -10,11 +10,15 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    let keyPasswordStrengthSectionTitle = "Password strength"
-    let keyPasswordStorageSectionTitle = "Password storage"
+    let keyPasswordStrengthSectionTitle = NSLocalizedString("Settings.PasswordStrength.Label", comment: "")
+    let keyPasswordStorageSectionTitle = NSLocalizedString("Settings.PasswordStorage.Label", comment: "")
    
-    let dataPasswordStrength = ["Weak", "Medium", "Strong"]
-    let dataPasswordStorage = ["Property list", "SQLite"]
+    let dataPasswordStrength = [NSLocalizedString("Settings.PasswordStrength.Weak", comment: ""),
+                                NSLocalizedString("Settings.PasswordStrength.Medium", comment: ""),
+                                NSLocalizedString("Settings.PasswordStrength.Strong", comment: "")]
+    
+    let dataPasswordStorage = [NSLocalizedString("Settings.PasswordStorage.PropertyList", comment: ""),
+                               NSLocalizedString("Settings.PasswordStorage.SQLite", comment: "")]
     
     let reusableCellID = "reusableCellID"
 
