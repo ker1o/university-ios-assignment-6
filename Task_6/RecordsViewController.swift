@@ -22,6 +22,11 @@ class RecordsViewController: UIViewController {
         return RecordsManager(url: fileURLForLocalStore, preferences: Preferences.standard)
     }()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reusableCellID)
+    }
     
     // MARK: Actions
     @IBAction func didTouchAddBarButtonItem(_ sender: AnyObject) {
@@ -49,8 +54,7 @@ extension RecordsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // I really don't know how to make this kind of initialization more beautiful
-        let tableViewCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: reusableCellID) ?? UITableViewCell(style: UITableViewCellStyle.value2, reuseIdentifier: reusableCellID)
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: reusableCellID, for: indexPath)
         let record = recordsManager.records[indexPath.row]
         tableViewCell.textLabel?.text = record.value(forKey: Record.keyServiceName) as? String
         tableViewCell.detailTextLabel?.text = record.value(forKey: Record.keyPassword) as? String
