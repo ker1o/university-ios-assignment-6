@@ -25,7 +25,7 @@ class RecordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reusableCellID)
+        tableView.register(TwoColumnsTableViewCell.self, forCellReuseIdentifier: reusableCellID)
     }
     
     // MARK: Actions
